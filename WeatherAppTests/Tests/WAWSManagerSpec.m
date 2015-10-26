@@ -33,10 +33,29 @@ describe(@"WAWSManager", ^{
         expect(manager).to.equal([WAWSManager sharedInstance]);
     });
     
-//    it(@"has a login api call implementation", ^{
-//        expect([PWWSManager sharedInstance]).to.respondTo(@selector(login:password:completionBlock:failureBlock:));
-//    });
+    it(@"has a params preperation for set coordinates", ^{
+        expect([WAWSManager sharedInstance]).to.respondTo(@selector(paramsForCoordinates:));
+    });
     
+    it(@"params preperation for set coordinates is resistant to ill input", ^{
+        expect([[WAWSManager sharedInstance] paramsForCoordinates:nil]).to.beKindOf([NSDictionary class]);
+    });
+    
+    it(@"has a params preperation for set city name", ^{
+        expect([WAWSManager sharedInstance]).to.respondTo(@selector(paramsForName:));
+    });
+    
+    it(@"params preperation for set city name is resistant to ill input", ^{
+        expect([[WAWSManager sharedInstance] paramsForName:nil]).to.beKindOf([NSDictionary class]);
+    });
+    
+    it(@"has a params preperation for set city id", ^{
+        expect([WAWSManager sharedInstance]).to.respondTo(@selector(paramsForId:));
+    });
+ 
+    it(@"params preperation for set city id is resistant to ill input", ^{
+        expect([[WAWSManager sharedInstance] paramsForId:nil]).to.beKindOf([NSDictionary class]);
+    });
     
     afterEach(^{
 

@@ -12,7 +12,7 @@
 #import <AFNetworkActivityLogger.h>
 
 
-#define BASE_URL            @"api.openweathermap.org/data/2.5"
+#define BASE_URL            @"http://api.openweathermap.org/data/2.5"
 #define API_KEY             @"c818ea0a0896001fae16ea6db75d58cd"
 
 @interface WAWSManager ()
@@ -60,6 +60,7 @@
 }
 
 #pragma mark - API Calls
+
 - (void)getWeather:(NSDictionary *)params
    completionBlock:(void(^)(id responseObject))completionBlock
       failureBlock:(void(^)(NSError *error))failureBlock
@@ -78,6 +79,42 @@
                                         failureBlock(error);
                                     }
                                 }];
+}
+
+#pragma mark - Request params preperation
+
+- (NSMutableDictionary *)params
+{
+    return [@{@"units" : @"metric",
+             @"APPID" : API_KEY}mutableCopy];
+}
+
+- (NSDictionary *)paramsForCoordinates:(WACoordinates *)coords
+{
+    NSMutableDictionary *dic = [self params];
+    if (coords && coords.longitude && coords.latitude) {
+        [dic addEntriesFromDictionary:@{@"lon" : coords.longitude,
+                                        @"lat" : coords.latitude}];
+    }
+    return [dic copy];
+}
+
+- (NSDictionary *)paramsForName:(NSString *)name
+{
+    NSMutableDictionary *dic = [self params];
+    if (name) {
+        [dic addEntriesFromDictionary:@{@"q" : name}];
+    }
+    return [dic copy];
+}
+
+- (NSDictionary *)paramsForId:(NSString *)identifier
+{
+    NSMutableDictionary *dic = [self params];
+    if (identifier) {
+        [dic addEntriesFromDictionary:@{@"id" : identifier}];
+    }
+    return [dic copy];
 }
 
 @end
