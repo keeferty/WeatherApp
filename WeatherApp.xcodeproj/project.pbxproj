@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1F3F1BEE12E7F7848DF2CFBD /* libPods-WeatherApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F411124991DB7423F2D1798C /* libPods-WeatherApp.a */; };
+		924068AE1BDEBCC900582EB3 /* WADashboardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 924068AD1BDEBCC900582EB3 /* WADashboardCollectionViewCell.m */; };
+		924068B51BDEC4EB00582EB3 /* WADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 924068B41BDEC4EB00582EB3 /* WADetailViewController.m */; };
+		924068B81BDECD7100582EB3 /* WADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 924068B71BDECD7100582EB3 /* WADataManager.m */; };
+		924068BD1BDECE2E00582EB3 /* NSObject+NSCodableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 924068BC1BDECE2E00582EB3 /* NSObject+NSCodableObject.m */; };
 		92F435991BDDBDE400B9D847 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F435981BDDBDE400B9D847 /* ViewController.m */; };
 		92F4359C1BDDBDE400B9D847 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F4359A1BDDBDE400B9D847 /* Main.storyboard */; };
 		92F435A11BDDBDE400B9D847 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F4359F1BDDBDE400B9D847 /* LaunchScreen.storyboard */; };
@@ -41,6 +45,14 @@
 
 /* Begin PBXFileReference section */
 		410FA9CEA87AEA81C9972AF3 /* Pods-WeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherAppTests/Pods-WeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		924068AC1BDEBCC900582EB3 /* WADashboardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADashboardCollectionViewCell.h; sourceTree = "<group>"; };
+		924068AD1BDEBCC900582EB3 /* WADashboardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADashboardCollectionViewCell.m; sourceTree = "<group>"; };
+		924068B31BDEC4EB00582EB3 /* WADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADetailViewController.h; sourceTree = "<group>"; };
+		924068B41BDEC4EB00582EB3 /* WADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADetailViewController.m; sourceTree = "<group>"; };
+		924068B61BDECD7000582EB3 /* WADataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADataManager.h; sourceTree = "<group>"; };
+		924068B71BDECD7100582EB3 /* WADataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADataManager.m; sourceTree = "<group>"; };
+		924068BB1BDECE2E00582EB3 /* NSObject+NSCodableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSCodableObject.h"; sourceTree = "<group>"; };
+		924068BC1BDECE2E00582EB3 /* NSObject+NSCodableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSCodableObject.m"; sourceTree = "<group>"; };
 		92F4358E1BDDBDE400B9D847 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F435971BDDBDE400B9D847 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		92F435981BDDBDE400B9D847 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -113,6 +125,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		924068AB1BDEBCAA00582EB3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				924068AC1BDEBCC900582EB3 /* WADashboardCollectionViewCell.h */,
+				924068AD1BDEBCC900582EB3 /* WADashboardCollectionViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		924068B11BDEC4CF00582EB3 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				924068B21BDEC4D300582EB3 /* ViewControllers */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		924068B21BDEC4D300582EB3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				924068B31BDEC4EB00582EB3 /* WADetailViewController.h */,
+				924068B41BDEC4EB00582EB3 /* WADetailViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		924068B91BDECE1900582EB3 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				924068BA1BDECE1D00582EB3 /* Categories */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		924068BA1BDECE1D00582EB3 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				924068BB1BDECE2E00582EB3 /* NSObject+NSCodableObject.h */,
+				924068BC1BDECE2E00582EB3 /* NSObject+NSCodableObject.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		92F435851BDDBDE400B9D847 = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +192,9 @@
 			isa = PBXGroup;
 			children = (
 				92F435F41BDE6B8800B9D847 /* Dashboard */,
+				924068B11BDEC4CF00582EB3 /* Detail */,
 				92F435CE1BDDCA5200B9D847 /* Model */,
+				924068B91BDECE1900582EB3 /* Misc */,
 				92F435971BDDBDE400B9D847 /* ViewController.h */,
 				92F435981BDDBDE400B9D847 /* ViewController.m */,
 				92F4359A1BDDBDE400B9D847 /* Main.storyboard */,
@@ -173,6 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				92F435CF1BDDCA5200B9D847 /* Communication */,
+				924068B61BDECD7000582EB3 /* WADataManager.h */,
+				924068B71BDECD7100582EB3 /* WADataManager.m */,
 				92F435D91BDE2EA500B9D847 /* WACity.h */,
 				92F435DA1BDE2EA500B9D847 /* WACity.m */,
 				92F435DC1BDE301C00B9D847 /* WACoordinates.h */,
@@ -213,6 +272,7 @@
 		92F435F41BDE6B8800B9D847 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				924068AB1BDEBCAA00582EB3 /* Views */,
 				92F435F51BDE6B8D00B9D847 /* ViewControllers */,
 			);
 			path = Dashboard;
@@ -442,6 +502,7 @@
 			files = (
 				92F435E41BDE339500B9D847 /* WAMain.m in Sources */,
 				92F435DB1BDE2EA500B9D847 /* WACity.m in Sources */,
+				924068BD1BDECE2E00582EB3 /* NSObject+NSCodableObject.m in Sources */,
 				92F435FC1BDEB27400B9D847 /* WASearchViewController.m in Sources */,
 				92F435F01BDE37E900B9D847 /* WAForcastedWeather.m in Sources */,
 				92F435F91BDE6BBB00B9D847 /* WADashboardViewController.m in Sources */,
@@ -450,9 +511,12 @@
 				92F435CA1BDDC9F000B9D847 /* AppDelegate.m in Sources */,
 				92F435D21BDDCA8700B9D847 /* WAWSManager.m in Sources */,
 				92F435CD1BDDC9F000B9D847 /* main.m in Sources */,
+				924068B81BDECD7100582EB3 /* WADataManager.m in Sources */,
 				92F435F31BDE39AE00B9D847 /* WAForcast.m in Sources */,
 				92F435991BDDBDE400B9D847 /* ViewController.m in Sources */,
 				92F435ED1BDE365B00B9D847 /* WAClouds.m in Sources */,
+				924068B51BDEC4EB00582EB3 /* WADetailViewController.m in Sources */,
+				924068AE1BDEBCC900582EB3 /* WADashboardCollectionViewCell.m in Sources */,
 				92F435E11BDE32A700B9D847 /* WAWeather.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

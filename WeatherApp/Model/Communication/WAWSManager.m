@@ -149,7 +149,8 @@ completionBlock:(void(^)(id responseObject))completionBlock
 - (NSMutableDictionary *)params
 {
     return [@{@"units" : @"metric",
-             @"APPID" : API_KEY}mutableCopy];
+              @"APPID" : API_KEY,
+              @"lang" : [NSLocale currentLocale].localeIdentifier}mutableCopy];
 }
 
 - (NSDictionary *)paramsForCoordinates:(WACoordinates *)coords
