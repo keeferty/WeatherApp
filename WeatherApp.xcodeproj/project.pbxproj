@@ -21,10 +21,11 @@
 		92F435E11BDE32A700B9D847 /* WAWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F435E01BDE32A700B9D847 /* WAWeather.m */; };
 		92F435E41BDE339500B9D847 /* WAMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F435E31BDE339500B9D847 /* WAMain.m */; };
 		92F435E71BDE34CE00B9D847 /* WAWind.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F435E61BDE34CE00B9D847 /* WAWind.m */; };
-		92F435EA1BDE35DE00B9D847 /* WAFall.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F435E91BDE35DE00B9D847 /* WAFall.m */; };
 		92F435ED1BDE365B00B9D847 /* WAClouds.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F435EC1BDE365B00B9D847 /* WAClouds.m */; };
 		92F435F01BDE37E900B9D847 /* WAForcastedWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F435EF1BDE37E900B9D847 /* WAForcastedWeather.m */; };
 		92F435F31BDE39AE00B9D847 /* WAForcast.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F435F21BDE39AE00B9D847 /* WAForcast.m */; };
+		92F435F91BDE6BBB00B9D847 /* WADashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F435F81BDE6BBB00B9D847 /* WADashboardViewController.m */; };
+		92F435FC1BDEB27400B9D847 /* WASearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F435FB1BDEB27400B9D847 /* WASearchViewController.m */; };
 		DB1E0C4B71FBB062BD9CA477 /* libPods-WeatherAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC50B100CE49830A6E118CD3 /* libPods-WeatherAppTests.a */; };
 /* End PBXBuildFile section */
 
@@ -66,14 +67,16 @@
 		92F435E31BDE339500B9D847 /* WAMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAMain.m; sourceTree = "<group>"; };
 		92F435E51BDE34CE00B9D847 /* WAWind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAWind.h; sourceTree = "<group>"; };
 		92F435E61BDE34CE00B9D847 /* WAWind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAWind.m; sourceTree = "<group>"; };
-		92F435E81BDE35DE00B9D847 /* WAFall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAFall.h; sourceTree = "<group>"; };
-		92F435E91BDE35DE00B9D847 /* WAFall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAFall.m; sourceTree = "<group>"; };
 		92F435EB1BDE365B00B9D847 /* WAClouds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAClouds.h; sourceTree = "<group>"; };
 		92F435EC1BDE365B00B9D847 /* WAClouds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAClouds.m; sourceTree = "<group>"; };
 		92F435EE1BDE37E900B9D847 /* WAForcastedWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAForcastedWeather.h; sourceTree = "<group>"; };
 		92F435EF1BDE37E900B9D847 /* WAForcastedWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAForcastedWeather.m; sourceTree = "<group>"; };
 		92F435F11BDE39AE00B9D847 /* WAForcast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAForcast.h; sourceTree = "<group>"; };
 		92F435F21BDE39AE00B9D847 /* WAForcast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAForcast.m; sourceTree = "<group>"; };
+		92F435F71BDE6BBB00B9D847 /* WADashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADashboardViewController.h; sourceTree = "<group>"; };
+		92F435F81BDE6BBB00B9D847 /* WADashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADashboardViewController.m; sourceTree = "<group>"; };
+		92F435FA1BDEB27400B9D847 /* WASearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WASearchViewController.h; sourceTree = "<group>"; };
+		92F435FB1BDEB27400B9D847 /* WASearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WASearchViewController.m; sourceTree = "<group>"; };
 		AC50B100CE49830A6E118CD3 /* libPods-WeatherAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B861FBB561E14099ACBA90F8 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		C7054338955F9E516C93431D /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 		92F435901BDDBDE400B9D847 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				92F435F41BDE6B8800B9D847 /* Dashboard */,
 				92F435CE1BDDCA5200B9D847 /* Model */,
 				92F435971BDDBDE400B9D847 /* ViewController.h */,
 				92F435981BDDBDE400B9D847 /* ViewController.m */,
@@ -181,8 +185,6 @@
 				92F435E61BDE34CE00B9D847 /* WAWind.m */,
 				92F435EB1BDE365B00B9D847 /* WAClouds.h */,
 				92F435EC1BDE365B00B9D847 /* WAClouds.m */,
-				92F435E81BDE35DE00B9D847 /* WAFall.h */,
-				92F435E91BDE35DE00B9D847 /* WAFall.m */,
 				92F435EE1BDE37E900B9D847 /* WAForcastedWeather.h */,
 				92F435EF1BDE37E900B9D847 /* WAForcastedWeather.m */,
 				92F435F11BDE39AE00B9D847 /* WAForcast.h */,
@@ -206,6 +208,25 @@
 				92F435D71BDDD44000B9D847 /* WAWSManagerSpec.m */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		92F435F41BDE6B8800B9D847 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				92F435F51BDE6B8D00B9D847 /* ViewControllers */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		92F435F51BDE6B8D00B9D847 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				92F435F71BDE6BBB00B9D847 /* WADashboardViewController.h */,
+				92F435F81BDE6BBB00B9D847 /* WADashboardViewController.m */,
+				92F435FA1BDEB27400B9D847 /* WASearchViewController.h */,
+				92F435FB1BDEB27400B9D847 /* WASearchViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		D96A070F11F36AEDED3FF330 /* Pods */ = {
@@ -421,7 +442,9 @@
 			files = (
 				92F435E41BDE339500B9D847 /* WAMain.m in Sources */,
 				92F435DB1BDE2EA500B9D847 /* WACity.m in Sources */,
+				92F435FC1BDEB27400B9D847 /* WASearchViewController.m in Sources */,
 				92F435F01BDE37E900B9D847 /* WAForcastedWeather.m in Sources */,
+				92F435F91BDE6BBB00B9D847 /* WADashboardViewController.m in Sources */,
 				92F435DE1BDE301C00B9D847 /* WACoordinates.m in Sources */,
 				92F435E71BDE34CE00B9D847 /* WAWind.m in Sources */,
 				92F435CA1BDDC9F000B9D847 /* AppDelegate.m in Sources */,
@@ -429,7 +452,6 @@
 				92F435CD1BDDC9F000B9D847 /* main.m in Sources */,
 				92F435F31BDE39AE00B9D847 /* WAForcast.m in Sources */,
 				92F435991BDDBDE400B9D847 /* ViewController.m in Sources */,
-				92F435EA1BDE35DE00B9D847 /* WAFall.m in Sources */,
 				92F435ED1BDE365B00B9D847 /* WAClouds.m in Sources */,
 				92F435E11BDE32A700B9D847 /* WAWeather.m in Sources */,
 			);

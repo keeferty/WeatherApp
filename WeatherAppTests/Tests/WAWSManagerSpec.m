@@ -53,8 +53,12 @@ describe(@"WAWSManager", ^{
         expect([WAWSManager sharedInstance]).to.respondTo(@selector(paramsForId:));
     });
  
-    it(@"params preperation for set city id is resistant to ill input", ^{
+    it(@"params preperation for set city id's is resistant to ill input", ^{
         expect([[WAWSManager sharedInstance] paramsForId:nil]).to.beKindOf([NSDictionary class]);
+    });
+    
+    it(@"params preperation for set city id's is resistant to empty list of id", ^{
+        expect([[WAWSManager sharedInstance] paramsForId:@[]]).to.beKindOf([NSDictionary class]);
     });
     
     afterEach(^{

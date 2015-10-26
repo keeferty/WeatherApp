@@ -10,9 +10,14 @@
 #import <AFNetworking.h>
 #import <AFNetworkActivityIndicatorManager.h>
 #import <AFNetworkActivityLogger.h>
+#import "WACity.h"
+#import "WAForcast.h"
 
 
 #define BASE_URL            @"http://api.openweathermap.org/data/2.5"
+#define WEATHER_URL         @"weather"
+#define FORECAST_URL        @"forecast"
+#define SEARCH_URL          @"find"
 #define API_KEY             @"c818ea0a0896001fae16ea6db75d58cd"
 
 @interface WAWSManager ()
@@ -61,11 +66,12 @@
 
 #pragma mark - API Calls
 
-- (void)getWeather:(NSDictionary *)params
-   completionBlock:(void(^)(id responseObject))completionBlock
-      failureBlock:(void(^)(NSError *error))failureBlock
+- (void)getData:(NSString *)type
+         params:(NSDictionary *)params
+completionBlock:(void(^)(id responseObject))completionBlock
+   failureBlock:(void(^)(NSError *error))failureBlock
 {
-    [self.operationManager GET:@"weather"
+    [self.operationManager GET:type
                     parameters:params
                        success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject)
                                 {
@@ -79,6 +85,63 @@
                                         failureBlock(error);
                                     }
                                 }];
+}
+
+- (void)getWeather:(NSDictionary *)params
+   completionBlock:(void (^)(WACity *result))completionBlock
+      failureBlock:(void (^)(NSError *error))failureBlock
+{
+    [self getData:WEATHER_URL params:params completionBlock:^(NSDictionary *responseObject)
+    {
+        NSError *error = nil;
+        WACity *city = [[WACity alloc]initWithDictionary:responseObject error:&error];
+        if (!error && completionBlock) {
+            completionBlock(city);
+        }else if (failureBlock) {
+            failureBlock(error);
+        }
+    } failureBlock:failureBlock];
+}
+
+- (void)getForecast:(NSDictionary *)params
+    completionBlock:(void (^)(WAForcast *forecast))completionBlock
+       failureBlock:(void (^)(NSError *error))failureBlock
+{
+    NSMutableDictionary *dic = [@{@"cnt" : @8} mutableCopy];
+    [dic addEntriesFromDictionary:params];
+    [self getData:FORECAST_URL params:dic completionBlock:^(NSDictionary *responseObject)
+    {
+        NSError *error = nil;
+        WAForcast *forecast = [[WAForcast alloc] initWithDictionary:responseObject error:&error];
+        if (!error && completionBlock) {
+            completionBlock(forecast);
+        }else {
+            if (failureBlock) {
+                failureBlock(error);
+            }
+        }
+    } failureBlock:failureBlock];
+}
+
+- (void)findCity:(NSDictionary *)params
+ completionBlock:(void (^)(NSArray *list))completionBlock
+    failureBlock:(void (^)(NSError *error))failureBlock
+{
+    NSMutableDictionary *dic = [@{@"type" : @"like"} mutableCopy];
+    [dic addEntriesFromDictionary:params];
+    [self getData:SEARCH_URL params:dic completionBlock:^(NSDictionary *responseObject) {
+        NSError *error = nil;
+        if ([responseObject objectForKey:@"list"]) {
+            NSArray *list = [WACity arrayOfModelsFromDictionaries:responseObject[@"list"] error:&error];
+            if (!error && completionBlock) {
+                completionBlock(list);
+            }else if (failureBlock){
+                failureBlock(error);
+            }
+        }else if (failureBlock) {
+            failureBlock(nil);
+        }
+    } failureBlock:failureBlock];
 }
 
 #pragma mark - Request params preperation
@@ -111,7 +174,8 @@
 - (NSDictionary *)paramsForId:(NSString *)identifier
 {
     NSMutableDictionary *dic = [self params];
-    if (identifier) {
+    if (identifier)
+    {
         [dic addEntriesFromDictionary:@{@"id" : identifier}];
     }
     return [dic copy];

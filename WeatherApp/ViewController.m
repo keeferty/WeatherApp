@@ -23,7 +23,17 @@
 {
     [super viewDidAppear:animated];
     WAWSManager *manager = [WAWSManager sharedInstance];
-    [manager getWeather:[manager paramsForName:@"Tczew"] completionBlock:^(id responseObject) {
+//    [manager getWeather:[manager paramsForName:@"Tczew"] completionBlock:^(WACity *result) {
+//        NSLog(@"success");
+//    } failureBlock:^(NSError *error) {
+//        NSLog(@"error");
+//    }];
+//    [manager getForecast:[manager paramsForName:@"Tczew"] completionBlock:^(WAForcast *forecast) {
+//        NSLog(@"success");
+//    } failureBlock:^(NSError *error) {
+//        NSLog(@"error");
+//    }];
+    [manager findCity:[manager paramsForName:@"lon"] completionBlock:^(NSArray *list) {
         NSLog(@"success");
     } failureBlock:^(NSError *error) {
         NSLog(@"error");

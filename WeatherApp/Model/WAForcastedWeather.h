@@ -11,7 +11,6 @@
 #import "WAMain.h"
 #import "WAWind.h"
 #import "WAClouds.h"
-#import "WAFall.h"
 
 @protocol WAForcastedWeather;
 
@@ -23,7 +22,5 @@
 @property (nonatomic, strong) WAMain    <Optional> *main;
 @property (nonatomic, strong) WAWind    <Optional> *wind;
 @property (nonatomic, strong) WAClouds  <Optional> *clouds;
-@property (nonatomic, strong) WAFall    <Optional> *rain;
-@property (nonatomic, strong) WAFall    <Optional> *snow;
 
 @end
