@@ -1,15 +1,15 @@
 //
-//  WAWSManager.h
+//  WAFall.h
 //  WeatherApp
 //
 //  Created by Pawel Weglewski on 26/10/15.
 //  Copyright © 2015 Pawel Weglewski. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "JSONModel.h"
 
-@interface WAWSManager : NSObject
+@interface WAFall : JSONModel
 
-+ (instancetype)sharedInstance;
+@property (nonatomic, strong) NSNumber *amount;
 
 @end

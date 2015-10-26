@@ -1,0 +1,27 @@
+//
+//  WeatherApp-Prefix.pch
+//  WeatherApp
+//
+//  Created by Pawel Weglewski on 26/10/15.
+//  Copyright © 2015 Pawel Weglewski. All rights reserved.
+//
+
+#ifndef WeatherApp_Prefix_pch
+#define WeatherApp_Prefix_pch
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#define ApplicationDelegate ((AppDelegate*)[UIApplication sharedApplication].delegate)
+#define LocString(key)	NSLocalizedString(key, @"")
+
+#ifdef DEBUG
+#define CLS_LOG(__FORMAT__, ...) NSLog((@"%s line %d $ " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#endif
+
+#endif
+
+
+#endif /* WeatherApp_Prefix_pch */

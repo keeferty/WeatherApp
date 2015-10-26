@@ -1,15 +1,13 @@
 //
-//  WAWSManager.h
+//  WAClouds.m
 //  WeatherApp
 //
 //  Created by Pawel Weglewski on 26/10/15.
 //  Copyright © 2015 Pawel Weglewski. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "WAClouds.h"
 
-@interface WAWSManager : NSObject
-
-+ (instancetype)sharedInstance;
+@implementation WAClouds
 
 @end

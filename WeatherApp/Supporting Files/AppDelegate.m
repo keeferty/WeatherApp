@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <JSONModel.h>
 
 @interface AppDelegate ()
 
@@ -16,7 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    JSONKeyMapper *mapper = [JSONKeyMapper mapperFromUnderscoreCaseToCamelCase];
+    [JSONModel setGlobalKeyMapper:mapper];
+    
     return YES;
 }
 
