@@ -116,7 +116,6 @@
                                             <outlet property="container" destination="67a-Ka-Trm" id="c1F-uN-cue"/>
                                             <outlet property="humidity" destination="Bov-dY-YYC" id="uoj-0z-X4W"/>
                                             <outlet property="temperature" destination="EBK-mw-0OU" id="AtZ-Au-zlK"/>
-                                            <segue destination="maA-pY-mUp" kind="show" identifier="ShowDetail" id="k4p-Oz-jJf"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -135,7 +134,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0wM-qo-Yi7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nd7-kw-WI5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Nd7-kw-WI5">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorBarButtonItem="Nd7-kw-WI5" id="Wrd-Ud-Umy">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -145,6 +144,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Kqv-jU-8Gb" id="jSe-oV-DhX"/>
+                        <segue destination="maA-pY-mUp" kind="show" identifier="ShowDetail" id="5cE-V3-Tka"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uaK-wJ-1hs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -234,7 +234,7 @@
             </objects>
             <point key="canvasLocation" x="794" y="-375"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Title-->
         <scene sceneID="Zr5-oC-9BM">
             <objects>
                 <viewController id="maA-pY-mUp" customClass="WADetailViewController" sceneMemberID="viewController">
@@ -285,7 +285,21 @@
                             <constraint firstItem="ouN-uT-k0E" firstAttribute="leading" secondItem="hEh-0r-jjg" secondAttribute="leading" id="x4A-5r-yng"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="cFm-qu-Hle">
+                        <barButtonItem key="rightBarButtonItem" id="9rf-b1-EHC">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0Wy-BO-SrJ">
+                                <rect key="frame" x="530" y="-3" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="browse_favorites"/>
+                                <state key="selected" image="browse_favorites_on"/>
+                                <connections>
+                                    <action selector="favourite:" destination="maA-pY-mUp" eventType="touchUpInside" id="4IR-IV-hqb"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="favouriteButton" destination="0Wy-BO-SrJ" id="xnH-5b-WVc"/>
                         <outlet property="graphContainer" destination="ouN-uT-k0E" id="4f6-ww-GM2"/>
                         <outlet property="tempGraphDescription" destination="ymo-Dv-I9u" id="aks-3H-JuC"/>
                         <outlet property="trendGraphContainer" destination="ESQ-qF-XA9" id="Mya-Za-erM"/>
@@ -297,4 +311,8 @@
             <point key="canvasLocation" x="794" y="468"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="browse_favorites" width="50" height="50"/>
+        <image name="browse_favorites_on" width="50" height="50"/>
+    </resources>
 </document>

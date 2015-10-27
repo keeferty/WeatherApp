@@ -37,4 +37,11 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+- (NSMutableArray *)dashboardList
+{
+    if (!_dashboardList) {
+        _dashboardList = [@[] mutableCopy];
+    }
+    return _dashboardList;
+}
 @end

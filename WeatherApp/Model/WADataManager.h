@@ -13,6 +13,7 @@
 @interface WADataManager : NSObject
 
 @property (nonatomic, copy) WACity *selectedCity;
+@property (nonatomic, strong) NSMutableArray *dashboardList;
 
 + (instancetype)sharedInstance;
 

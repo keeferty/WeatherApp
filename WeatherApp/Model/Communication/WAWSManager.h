@@ -29,6 +29,6 @@
 
 - (NSDictionary *)paramsForCoordinates:(WACoordinates *)coords;
 - (NSDictionary *)paramsForName:(NSString *)name;
-- (NSDictionary *)paramsForId:(NSArray *)identifiers;
+- (NSDictionary *)paramsForId:(NSString *)identifier;
 
 @end

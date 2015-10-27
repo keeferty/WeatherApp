@@ -20,7 +20,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *tempGraphDescription;
 @property (weak, nonatomic) IBOutlet UIView *trendGraphContainer;
 @property (weak, nonatomic) IBOutlet UILabel *trendGraphDescription;
+@property (assign, nonatomic) BOOL rotated;
 
+@property (weak, nonatomic) IBOutlet UIButton *favouriteButton;
 @end
 
 @implementation WADetailViewController
@@ -28,20 +30,31 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    WAWSManager *manager = [WAWSManager sharedInstance];
+    WAWSManager *wsmanager = [WAWSManager sharedInstance];
+    WADataManager *datamanager = [WADataManager sharedInstance];
     WADetailViewController __weak *weakSelf = self;
-    [manager getForecast:[manager paramsForName:[WADataManager sharedInstance].selectedCity.name] completionBlock:^(WAForcast *forecast) {
+    [wsmanager getForecast:[wsmanager paramsForName:datamanager.selectedCity.name] completionBlock:^(WAForcast *forecast) {
         weakSelf.forecast = forecast;
         [self fillWithModel];
     } failureBlock:^(NSError *error) {
-        
     }];
+    if ([datamanager.dashboardList containsObject: datamanager.selectedCity.identifier]) {
+        self.favouriteButton.selected = YES;
+    }
 }
 
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    [self reloadTempGraph];
+    if (self.rotated) {
+        if (self.lineChart) {
+            [self reloadTempGraph];
+        }
+        if (self.trendChart) {
+            [self reloadTrendGraph];
+        }
+        self.rotated = NO;
+    }
 }
 
 - (void)fillWithModel
@@ -110,4 +123,20 @@
     [self.trendChart setChartData:[self weatherTrend]];
 }
 
+- (IBAction)favourite:(UIButton *)sender
+{
+    WADataManager *datamanager = [WADataManager sharedInstance];
+    if ([datamanager.dashboardList containsObject: datamanager.selectedCity.identifier]) {
+        [datamanager.dashboardList removeObject:datamanager.selectedCity.identifier];
+        self.favouriteButton.selected = NO;
+    }else{
+        [datamanager.dashboardList addObject:datamanager.selectedCity.identifier];
+        self.favouriteButton.selected = YES;
+    }
+}
+#pragma mark - Rotation and Multitasking stuff
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    self.rotated = YES;
+}
 @end
