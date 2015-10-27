@@ -28,6 +28,12 @@
     [self.locationManager requestWhenInUseAuthorization];
 }
 
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    [self.collectionView reloadData];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -94,13 +100,20 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
     [self.locationManager stopUpdatingLocation];
-    CLLocation *location = locations.firstObject;
+    CLLocation *location = locations.lastObject;
     WACoordinates *coords = [WACoordinates new];
     coords.latitude = @(location.coordinate.latitude);
     coords.longitude = @(location.coordinate.longitude);
     WAWSManager *wsmanager = [WAWSManager sharedInstance];
     [wsmanager getWeather:[wsmanager paramsForCoordinates:coords] completionBlock:^(WACity *result) {
-        [self.datasource insertObject:result atIndex:0];
+        result.locationAdded = @YES;
+        [self.datasource enumerateObjectsUsingBlock:^(WACity *city, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (city.locationAdded.boolValue) {
+                [self.datasource removeObject:city];
+                *stop = YES;
+            }
+        }];
+        [self.datasource addObject:result];
         [self.collectionView reloadData];
     } failureBlock:^(NSError *error) {
     }];

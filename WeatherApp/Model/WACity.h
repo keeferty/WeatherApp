@@ -24,5 +24,6 @@
 @property (nonatomic, strong) WAMain        <Optional> *main;
 @property (nonatomic, strong) WAWind        <Optional> *wind;
 @property (nonatomic, strong) WAClouds      <Optional> *clouds;
+@property (nonatomic, strong) NSNumber      <Ignore>*locationAdded;
 
 @end
