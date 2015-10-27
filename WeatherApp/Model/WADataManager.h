@@ -16,5 +16,6 @@
 @property (nonatomic, strong) NSMutableArray *dashboardList;
 
 + (instancetype)sharedInstance;
+- (void)save;
 
 @end

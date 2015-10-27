@@ -133,6 +133,7 @@
         [datamanager.dashboardList addObject:datamanager.selectedCity.identifier];
         self.favouriteButton.selected = YES;
     }
+    [datamanager save];
 }
 #pragma mark - Rotation and Multitasking stuff
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator

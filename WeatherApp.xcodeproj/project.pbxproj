@@ -12,7 +12,7 @@
 		924068B51BDEC4EB00582EB3 /* WADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 924068B41BDEC4EB00582EB3 /* WADetailViewController.m */; };
 		924068B81BDECD7100582EB3 /* WADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 924068B71BDECD7100582EB3 /* WADataManager.m */; };
 		924068BD1BDECE2E00582EB3 /* NSObject+NSCodableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 924068BC1BDECE2E00582EB3 /* NSObject+NSCodableObject.m */; };
-		92F435991BDDBDE400B9D847 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F435981BDDBDE400B9D847 /* ViewController.m */; };
+		924068BF1BDF06C000582EB3 /* WADataManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 924068BE1BDF06C000582EB3 /* WADataManagerSpec.m */; };
 		92F4359C1BDDBDE400B9D847 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F4359A1BDDBDE400B9D847 /* Main.storyboard */; };
 		92F435A11BDDBDE400B9D847 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F4359F1BDDBDE400B9D847 /* LaunchScreen.storyboard */; };
 		92F435CA1BDDC9F000B9D847 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F435C61BDDC9F000B9D847 /* AppDelegate.m */; };
@@ -53,9 +53,8 @@
 		924068B71BDECD7100582EB3 /* WADataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADataManager.m; sourceTree = "<group>"; };
 		924068BB1BDECE2E00582EB3 /* NSObject+NSCodableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSCodableObject.h"; sourceTree = "<group>"; };
 		924068BC1BDECE2E00582EB3 /* NSObject+NSCodableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSCodableObject.m"; sourceTree = "<group>"; };
+		924068BE1BDF06C000582EB3 /* WADataManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADataManagerSpec.m; sourceTree = "<group>"; };
 		92F4358E1BDDBDE400B9D847 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		92F435971BDDBDE400B9D847 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		92F435981BDDBDE400B9D847 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		92F4359B1BDDBDE400B9D847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92F435A01BDDBDE400B9D847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92F435A71BDDBDE500B9D847 /* WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,8 +194,6 @@
 				924068B11BDEC4CF00582EB3 /* Detail */,
 				92F435CE1BDDCA5200B9D847 /* Model */,
 				924068B91BDECE1900582EB3 /* Misc */,
-				92F435971BDDBDE400B9D847 /* ViewController.h */,
-				92F435981BDDBDE400B9D847 /* ViewController.m */,
 				92F4359A1BDDBDE400B9D847 /* Main.storyboard */,
 				92F4359F1BDDBDE400B9D847 /* LaunchScreen.storyboard */,
 				92F435C41BDDC9F000B9D847 /* Supporting Files */,
@@ -265,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				92F435D71BDDD44000B9D847 /* WAWSManagerSpec.m */,
+				924068BE1BDF06C000582EB3 /* WADataManagerSpec.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -513,7 +511,6 @@
 				92F435CD1BDDC9F000B9D847 /* main.m in Sources */,
 				924068B81BDECD7100582EB3 /* WADataManager.m in Sources */,
 				92F435F31BDE39AE00B9D847 /* WAForcast.m in Sources */,
-				92F435991BDDBDE400B9D847 /* ViewController.m in Sources */,
 				92F435ED1BDE365B00B9D847 /* WAClouds.m in Sources */,
 				924068B51BDEC4EB00582EB3 /* WADetailViewController.m in Sources */,
 				924068AE1BDEBCC900582EB3 /* WADashboardCollectionViewCell.m in Sources */,
@@ -525,6 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				924068BF1BDF06C000582EB3 /* WADataManagerSpec.m in Sources */,
 				92F435D81BDDD44000B9D847 /* WAWSManagerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
