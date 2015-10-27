@@ -58,7 +58,7 @@
 {
     if (!_operationManager) {
         _operationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL]];
-        [_operationManager.operationQueue setMaxConcurrentOperationCount:1];
+        [_operationManager.operationQueue setMaxConcurrentOperationCount:2];
         [_operationManager.requestSerializer setTimeoutInterval:10];
     }
     return _operationManager;
@@ -149,7 +149,8 @@ completionBlock:(void(^)(id responseObject))completionBlock
 - (NSMutableDictionary *)params
 {
     return [@{@"units" : @"metric",
-             @"APPID" : API_KEY}mutableCopy];
+              @"APPID" : API_KEY,
+              @"lang" : [NSLocale currentLocale].localeIdentifier}mutableCopy];
 }
 
 - (NSDictionary *)paramsForCoordinates:(WACoordinates *)coords

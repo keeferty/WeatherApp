@@ -6,6 +6,7 @@ target 'WeatherApp' do
 pod 'AFNetworking'  , '~> 2.0'
 pod 'JSONModel'     , '~> 1.1'
 pod 'AFNetworkActivityLogger', '~> 2.0'
+pod 'FSLineChart'
 end
 
 target 'WeatherAppTests' do
@@ -14,7 +15,4 @@ pod 'Expecta', '~> 1.0'
 pod 'OHHTTPStubs', '~> 4.4'
 end
 
-target 'WeatherAppUITests' do
-
-end
 

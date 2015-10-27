@@ -18,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithWhite:0.9 alpha:1]];
+    [[UINavigationBar appearance] setTintColor:[UIColor darkGrayColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor darkGrayColor], NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:18]}];
+
     JSONKeyMapper *mapper = [JSONKeyMapper mapperFromUnderscoreCaseToCamelCase];
     [JSONModel setGlobalKeyMapper:mapper];
     

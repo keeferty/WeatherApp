@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WADetailViewController.h
 //  WeatherApp
 //
 //  Created by Pawel Weglewski on 26/10/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface WADetailViewController : UIViewController
 
 @end
-
