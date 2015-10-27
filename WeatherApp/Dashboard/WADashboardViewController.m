@@ -10,17 +10,28 @@
 #import "WAWSManager.h"
 #import "WADataManager.h"
 #import "WADashboardCollectionViewCell.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface WADashboardViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface WADashboardViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate>
 @property (nonatomic, strong) NSMutableArray *datasource;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 @end
 
 @implementation WADashboardViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    [self.locationManager requestWhenInUseAuthorization];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.locationManager startUpdatingLocation];
     WADataManager *dataManager = [WADataManager sharedInstance];
     WAWSManager *wsmanager = [WAWSManager sharedInstance];
     WADashboardViewController __weak *weakSelf = self;
@@ -78,4 +89,21 @@
     [WADataManager sharedInstance].selectedCity = self.datasource[indexPath.item];
     [self performSegueWithIdentifier:@"ShowDetail" sender:self];
 }
+
+#pragma mark - CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
+{
+    [self.locationManager stopUpdatingLocation];
+    CLLocation *location = locations.firstObject;
+    WACoordinates *coords = [WACoordinates new];
+    coords.latitude = @(location.coordinate.latitude);
+    coords.longitude = @(location.coordinate.longitude);
+    WAWSManager *wsmanager = [WAWSManager sharedInstance];
+    [wsmanager getWeather:[wsmanager paramsForCoordinates:coords] completionBlock:^(WACity *result) {
+        [self.datasource insertObject:result atIndex:0];
+        [self.collectionView reloadData];
+    } failureBlock:^(NSError *error) {
+    }];
+}
+
 @end

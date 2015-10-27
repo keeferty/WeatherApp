@@ -7,6 +7,7 @@ pod 'AFNetworking'  , '~> 2.0'
 pod 'JSONModel'     , '~> 1.1'
 pod 'AFNetworkActivityLogger', '~> 2.0'
 pod 'FSLineChart'
+pod 'RNCryptor', '~> 2.0'
 end
 
 target 'WeatherAppTests' do
