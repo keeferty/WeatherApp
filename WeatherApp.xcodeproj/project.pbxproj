@@ -54,6 +54,7 @@
 		924068BB1BDECE2E00582EB3 /* NSObject+NSCodableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSCodableObject.h"; sourceTree = "<group>"; };
 		924068BC1BDECE2E00582EB3 /* NSObject+NSCodableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSCodableObject.m"; sourceTree = "<group>"; };
 		924068BE1BDF06C000582EB3 /* WADataManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADataManagerSpec.m; sourceTree = "<group>"; };
+		924068C01BDF0DED00582EB3 /* libcommonCrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcommonCrypto.tbd; path = usr/lib/system/libcommonCrypto.tbd; sourceTree = SDKROOT; };
 		92F4358E1BDDBDE400B9D847 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F4359B1BDDBDE400B9D847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92F435A01BDDBDE400B9D847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 		91F3BFE6AFD2A5B80230AF69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				924068C01BDF0DED00582EB3 /* libcommonCrypto.tbd */,
 				F411124991DB7423F2D1798C /* libPods-WeatherApp.a */,
 				AC50B100CE49830A6E118CD3 /* libPods-WeatherAppTests.a */,
 			);
@@ -648,6 +650,10 @@
 				INFOPLIST_FILE = "WeatherApp/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PW.WeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -662,6 +668,10 @@
 				INFOPLIST_FILE = "WeatherApp/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PW.WeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

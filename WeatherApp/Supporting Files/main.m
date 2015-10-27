@@ -21,7 +21,6 @@ void disable_gdb() {
     ptrace_ptr_t ptrace_ptr = dlsym(handle, "ptrace");
     ptrace_ptr(PT_DENY_ATTACH, 0, 0, 0);
     dlclose(handle);
-    exit(-1);
 }
 
 int main(int argc, char * argv[]) {

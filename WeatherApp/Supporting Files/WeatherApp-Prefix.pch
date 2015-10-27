@@ -16,7 +16,6 @@
 #import "NSObject+NSCodableObject.h"
 
 #define ApplicationDelegate ((AppDelegate*)[UIApplication sharedApplication].delegate)
-#define LocString(key)	NSLocalizedString(key, @"")
 
 #ifdef DEBUG
 #define CLS_LOG(__FORMAT__, ...) NSLog((@"%s line %d $ " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)

@@ -18,8 +18,7 @@
 #define WEATHER_URL         @"weather"
 #define FORECAST_URL        @"forecast"
 #define SEARCH_URL          @"find"
-#define API_KEY             @"c818ea0a0896001fae16ea6db75d58cd"
-
+const char myApiKey[] = { 0x0063,0x0038,0x0031,0x0038,0x0065,0x0061,0x0030,0x0061,0x0030,0x0038,0x0039,0x0036,0x0030,0x0030,0x0031,0x0066,0x0061,0x0065,0x0031,0x0036,0x0065,0x0061,0x0036,0x0064,0x0062,0x0037,0x0035,0x0064,0x0035,0x0038,0x0063,0x0064,0x00};
 @interface WAWSManager ()
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *operationManager;
@@ -34,22 +33,14 @@
     static WAWSManager *sharedManager = nil;
     dispatch_once(&onceToken, ^{
         sharedManager = [WAWSManager new];
-        [[NSNotificationCenter defaultCenter] addObserver:sharedManager selector:@selector(afNetworkingListener:) name:AFNetworkingTaskDidCompleteNotification object:nil];
         [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 #ifdef DEBUG
         [[AFNetworkActivityLogger sharedLogger] startLogging];
         [[AFNetworkActivityLogger sharedLogger] setLevel:AFLoggerLevelDebug];
 #endif
     });
+
     return sharedManager;
-}
-
-#pragma mark - Listener for errors
-
-- (void)afNetworkingListener:(NSNotification *)note
-{
-    NSError *error = note.userInfo[AFNetworkingTaskDidCompleteErrorKey];
-    CLS_LOG(@"%@",[error localizedDescription]);
 }
 
 #pragma mark - Getters for lazy instantiation
@@ -149,7 +140,7 @@ completionBlock:(void(^)(id responseObject))completionBlock
 - (NSMutableDictionary *)params
 {
     return [@{@"units" : @"metric",
-              @"APPID" : API_KEY,
+              @"APPID" : [[NSString alloc]initWithBytes:myApiKey length:strlen(myApiKey) encoding:NSASCIIStringEncoding],
               @"lang" : [NSLocale currentLocale].localeIdentifier}mutableCopy];
 }
 
